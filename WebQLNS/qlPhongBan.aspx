@@ -3,7 +3,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
    
-  <h2>Quản lí phòng ban</h2>
+    <h2 class="text-center">QUẢN LÍ PHÒNG BAN</h2>
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:QLNhanVienConnectionString3 %>" DeleteCommand="DELETE FROM [PhongBan] WHERE [MaPhong] = @MaPhong" InsertCommand="INSERT INTO [PhongBan] ([TenPhong]) VALUES (@TenPhong)" ProviderName="<%$ ConnectionStrings:QLNhanVienConnectionString3.ProviderName %>" SelectCommand="SELECT * FROM [PhongBan]" UpdateCommand="UPDATE [PhongBan] SET [TenPhong] = @TenPhong WHERE [MaPhong] = @MaPhong">
         <DeleteParameters>
             <asp:Parameter Name="MaPhong" Type="Int32" />
@@ -29,6 +29,7 @@
             <asp:Parameter Name="MaPhong" Type="Int32" />
         </InsertParameters>
         <SelectParameters>
+           
             <asp:ControlParameter ControlID="ddlPhongBan" Name="MaPhong" PropertyName="SelectedValue" Type="Int32" />
         </SelectParameters>
         <UpdateParameters>
@@ -41,8 +42,8 @@
             <asp:Parameter Name="MaNV" Type="Int32" />
         </UpdateParameters>
     </asp:SqlDataSource>
-<asp:DropDownList ID="ddlPhongBan" runat="server" DataSourceID="SqlDataSource1" DataTextField="TenPhong" DataValueField="MaPhong"></asp:DropDownList>
-    <asp:GridView ID="gvPhongBan" runat="server" AutoGenerateColumns="False" DataKeyNames="MaNV" DataSourceID="SqlDataSource2" CellPadding="4" ForeColor="#333333" GridLines="None">
+Chọn phòng ban:<asp:DropDownList ID="ddlPhongBan" runat="server" DataSourceID="SqlDataSource1" DataTextField="TenPhong" DataValueField="MaPhong" AutoPostBack="true"></asp:DropDownList>
+    <asp:GridView ID="gvPhongBan" runat="server" AutoGenerateColumns="False" DataKeyNames="MaNV" DataSourceID="SqlDataSource2" CellPadding="4" ForeColor="#333333" GridLines="None" Height="245px" Width="1532px">
         <AlternatingRowStyle BackColor="White" />
         <Columns>
             <asp:BoundField DataField="MaNV" HeaderText="MaNV" InsertVisible="False" ReadOnly="True" SortExpression="MaNV" />
@@ -52,6 +53,7 @@
             <asp:BoundField DataField="NgaySinh" HeaderText="NgaySinh" SortExpression="NgaySinh" />
             <asp:BoundField DataField="NoiSinh" HeaderText="NoiSinh" SortExpression="NoiSinh" />
             <asp:BoundField DataField="MaPhong" HeaderText="MaPhong" SortExpression="MaPhong" />
+            <asp:CommandField  ControlStyle-CssClass="btn btn-warning" ShowDeleteButton="True" />
         </Columns>
         <EditRowStyle BackColor="#7C6F57" />
         <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
@@ -63,5 +65,11 @@
         <SortedAscendingHeaderStyle BackColor="#246B61" />
         <SortedDescendingCellStyle BackColor="#D4DFE1" />
         <SortedDescendingHeaderStyle BackColor="#15524A" />
+        
+        <EmptyDataTemplate>
+            <div class="h3 text-danger text-center bg-warning text-white">Không có dữ liệu</div>
+        </EmptyDataTemplate>
+       <PagerSettings Mode="Numeric" PageButtonCount="4" /> 
+
 </asp:GridView>
 </asp:Content>

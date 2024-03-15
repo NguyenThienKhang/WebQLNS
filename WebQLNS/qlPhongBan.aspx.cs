@@ -11,7 +11,16 @@ namespace WebQLNS
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                foreach(ListItem item in ddlPhongBan.Items)
+                {
+                    if (item.Value == "1")
+                    {
+                        item.Selected = false;
+                    }
+                }
+            }
         }
     }
 }
