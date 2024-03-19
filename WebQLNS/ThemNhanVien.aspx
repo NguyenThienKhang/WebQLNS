@@ -49,5 +49,6 @@
 
         </div>
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:QLNhanVienConnectionString3 %>" SelectCommand="SELECT * FROM [PhongBan]"></asp:SqlDataSource>
+       
     </form>
 </asp:Content>
