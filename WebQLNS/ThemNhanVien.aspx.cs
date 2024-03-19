@@ -43,7 +43,13 @@ namespace WebQLNS
             int check = cmd.ExecuteNonQuery();
             if (check>0)
             {
-                lblThongBao.Text = "Thêm nhân viên  thành công!";
+                Response.Redirect("qlNhanVien.aspx");
+
+                //lblThongBao.Text = "Thêm nhân viên  thành công!";
+            }
+            else
+            {
+                lblThongBao.Text = "Thêm nhân viên  thất bại!";
             }
         }
     }

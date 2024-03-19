@@ -86,6 +86,8 @@
     <Content Include="Global.asax" />
     <Content Include="qlNhanVien.aspx" />
     <Content Include="qlPhongBan.aspx" />
+    <Content Include="qlTheLoai.aspx" />
+    <Content Include="qlTinTuc.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
@@ -113,6 +115,20 @@
     </Compile>
     <Compile Include="qlPhongBan.aspx.designer.cs">
       <DependentUpon>qlPhongBan.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="qlTheLoai.aspx.cs">
+      <DependentUpon>qlTheLoai.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="qlTheLoai.aspx.designer.cs">
+      <DependentUpon>qlTheLoai.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="qlTinTuc.aspx.cs">
+      <DependentUpon>qlTinTuc.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="qlTinTuc.aspx.designer.cs">
+      <DependentUpon>qlTinTuc.aspx</DependentUpon>
     </Compile>
     <Compile Include="Site1.Master.cs">
       <DependentUpon>Site1.Master</DependentUpon>
